@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://janjatss.rw/sitemap.xml
+Sitemap:https://college-appec-tss.github.io/janja_tss/sitemap.xml
