@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://YOUR-DOMAIN.com/</loc>
+        <loc>https://college-appec-tss.github.io/janja_tss/</loc>
         <priority>1.0</priority>
     </url>
 
     <url>
-        <loc>https://YOUR-DOMAIN.com/about</loc>
+        <loc>https://college-appec-tss.github.io/janja_tss/#contact</loc>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://YOUR-DOMAIN.com/contact</loc>
+        <loc>https://college-appec-tss.github.io/janja_tss/#contact</loc>
         <priority>0.7</priority>
     </url>
 
