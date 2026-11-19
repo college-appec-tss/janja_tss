@@ -196,7 +196,7 @@
     .btn-outline { color: var(--cyan); border: 1px solid var(--cyan); background: rgba(0,229,255,.035); }
     .btn-outline:hover { background: var(--cyan); color: #06111d; }
 
-    /* HERO IMAGE SLIDESHOW — ASPADE-style */
+    /* HERO IMAGE SLIDESHOW — ASPADE-style with a caption on every image */
     .hero-visual {
       position: relative;
       height: 520px;
@@ -207,57 +207,69 @@
       background: #10243a;
     }
 
-    .hero-visual img {
+    .hero-slide {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      inset: 0;
       opacity: 0;
       animation: slider 18s infinite;
     }
 
-    .hero-visual img:nth-child(1) { animation-delay: 0s; }
-    .hero-visual img:nth-child(2) { animation-delay: 6s; }
-    .hero-visual img:nth-child(3) { animation-delay: 12s; }
+    .hero-slide:nth-child(1) { animation-delay: 0s; }
+    .hero-slide:nth-child(2) { animation-delay: 6s; }
+    .hero-slide:nth-child(3) { animation-delay: 12s; }
 
-    .hero-visual::after {
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-slide::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.72), transparent 55%);
+      background: linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.04) 72%);
       pointer-events: none;
     }
 
-    .visual-caption {
+    .slide-caption {
       position: absolute;
       z-index: 2;
       left: 25px;
       right: 25px;
-      bottom: 23px;
+      bottom: 25px;
       color: #fff;
+    }
+
+    .slide-caption h3 {
+      margin: 0 0 8px;
+      font-size: clamp(21px, 3vw, 30px);
+      line-height: 1.2;
+      font-weight: 800;
+      text-shadow: 0 2px 12px rgba(0,0,0,.45);
+    }
+
+    .slide-caption p {
+      max-width: 440px;
+      margin: 0;
+      color: rgba(255,255,255,.92);
       font-size: 13px;
-      font-weight: 600;
+      line-height: 1.6;
+      text-shadow: 0 2px 8px rgba(0,0,0,.5);
     }
 
     @keyframes slider {
       0% {
         opacity: 0;
-        transform: scale(1.1);
+        transform: scale(1.08);
       }
-      8% {
+      8%, 30% {
         opacity: 1;
       }
-      30% {
-        opacity: 1;
+      40%, 100% {
+        opacity: 0;
         transform: scale(1);
-      }
-      40% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 0;
       }
     }
 
@@ -480,10 +492,29 @@
       </div>
 
       <div class="hero-visual" aria-label="Janja TVET School photo slideshow">
-        <img src="campus-banner.jpg" alt="Janja TVET School campus">
-        <img src="campus.jpg" alt="Janja TVET school environment">
-        <img src="students.jpg" alt="Janja TVET students">
-        <div class="visual-caption">Practical learning. Professional skills. A brighter future.</div>
+        <div class="hero-slide">
+          <img src="campus-banner.jpg" alt="Janja TVET School campus">
+          <div class="slide-caption">
+            <h3>Building Skills, Shaping Futures</h3>
+            <p>Welcome to Janja TVET School, where education meets practical skills and innovation.</p>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="campus.jpg" alt="Janja TVET School learning environment">
+          <div class="slide-caption">
+            <h3>Learn Today. Build Tomorrow.</h3>
+            <p>Develop practical knowledge and professional skills through technical and vocational education.</p>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="students.jpg" alt="Janja TVET School students">
+          <div class="slide-caption">
+            <h3>Your Future Starts Here</h3>
+            <p>Gain confidence, creativity and skills to prepare for tomorrow's opportunities.</p>
+          </div>
+        </div>
       </div>
     </div>
 
