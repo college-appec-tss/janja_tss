@@ -196,50 +196,69 @@
     .btn-outline { color: var(--cyan); border: 1px solid var(--cyan); background: rgba(0,229,255,.035); }
     .btn-outline:hover { background: var(--cyan); color: #06111d; }
 
+    /* HERO IMAGE SLIDESHOW — ASPADE-style */
     .hero-visual {
-      height: 490px;
       position: relative;
-      border: 1px solid var(--line);
-      border-radius: 30px;
+      height: 520px;
       overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
       background: #10243a;
-      box-shadow: 0 25px 75px rgba(0,0,0,.42);
     }
+
     .hero-visual img {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      animation: heroSlide 18s infinite;
+      animation: slider 18s infinite;
     }
+
     .hero-visual img:nth-child(1) { animation-delay: 0s; }
     .hero-visual img:nth-child(2) { animation-delay: 6s; }
     .hero-visual img:nth-child(3) { animation-delay: 12s; }
+
     .hero-visual::after {
       content: "";
       position: absolute;
-      inset: 45% 0 0;
-      background: linear-gradient(transparent, rgba(3,12,22,.72));
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.72), transparent 55%);
       pointer-events: none;
     }
+
     .visual-caption {
       position: absolute;
       z-index: 2;
       left: 25px;
       right: 25px;
       bottom: 23px;
-      color: white;
+      color: #fff;
       font-size: 13px;
       font-weight: 600;
     }
-    @keyframes heroSlide {
-      0% { opacity: 0; transform: scale(1.08); }
-      8% { opacity: 1; }
-      30% { opacity: 1; transform: scale(1); }
-      40% { opacity: 0; }
-      100% { opacity: 0; }
+
+    @keyframes slider {
+      0% {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+      8% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      40% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
     }
 
     /* COMMON SECTIONS */
